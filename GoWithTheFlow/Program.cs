@@ -19,8 +19,8 @@ namespace GoWithTheFlow
             if (answer.ToLower() == "no")
             {
                 Console.WriteLine("Plug in lamp");
-            }   
-            else
+            }
+            else if (answer.ToLower() == "yes")
             {
                 Console.WriteLine("Bulb burned out?");
                 answer = Console.ReadLine();
@@ -29,10 +29,20 @@ namespace GoWithTheFlow
                 {
                     Console.WriteLine("Repair lamp");
                 }
-                else
+                else if (answer.ToLower() == "yes")
                 {
                     Console.WriteLine("Replace bulb");
+
                 }
+                else
+                {
+                    Console.WriteLine("I don't understand");
+                }
+
+            }
+            else
+            {
+                Console.WriteLine("I didn't understand");
             }
 
             Console.ReadKey();
