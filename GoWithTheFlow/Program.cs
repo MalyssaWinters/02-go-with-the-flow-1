@@ -14,38 +14,68 @@ namespace GoWithTheFlow
 
             Console.WriteLine("Lamp plugged in?");
 
-            string answer = Console.ReadLine();
 
-            if (answer.ToLower() == "no")
+            if (!GetYesOrNo()) // == false
             {
                 Console.WriteLine("Plug in lamp");
             }
-            else if (answer.ToLower() == "yes")
+            else
             {
                 Console.WriteLine("Bulb burned out?");
-                answer = Console.ReadLine();
 
-                if (answer.ToLower() == "no")
+                if (!GetYesOrNo()) // == false
                 {
                     Console.WriteLine("Repair lamp");
                 }
-                else if (answer.ToLower() == "yes")
+                else
                 {
                     Console.WriteLine("Replace bulb");
 
                 }
-                else
-                {
-                    Console.WriteLine("I don't understand");
-                }
 
+            }
+
+
+            Console.WriteLine("Press a key to finish");
+            Console.ReadKey();
+        }
+
+        static void InvalidInput()
+        {
+            Console.WriteLine("I didn't understand that. I'm going to assume you mean no.");
+        }
+
+        static bool GetYesOrNo()
+        {
+            string answer = Console.ReadLine();
+            if (answer.ToLower() == "no")
+            {
+                return false;
+            }
+            else if (answer.ToLower() == "yes")
+            {
+                return true;
             }
             else
             {
-                Console.WriteLine("I didn't understand");
+                InvalidInput();
+                return false;
             }
-
-            Console.ReadKey();
         }
+
+
+        //static bool GetYesOrNo()
+        //{
+        //    string answer = Console.ReadLine();
+
+        //    if (answer.ToLower() == "no")
+        //    {
+
+        //    }
+        //    else
+        //    {
+
+        //    }
+        //}
     }
 }
