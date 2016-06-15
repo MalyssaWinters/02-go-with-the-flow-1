@@ -14,7 +14,6 @@ namespace GoWithTheFlow
 
             Console.WriteLine("Lamp plugged in?");
 
-
             if (!GetYesOrNo()) // == false
             {
                 Console.WriteLine("Plug in lamp");
@@ -30,17 +29,14 @@ namespace GoWithTheFlow
                 else
                 {
                     Console.WriteLine("Replace bulb");
-
                 }
-
             }
-
 
             Console.WriteLine("Press a key to finish");
             Console.ReadKey();
         }
 
-        static void InvalidInput()
+        static void PrintError()
         {
             Console.WriteLine("I didn't understand that. I'm going to assume you mean no.");
         }
@@ -58,7 +54,7 @@ namespace GoWithTheFlow
             }
             else
             {
-                InvalidInput();
+                PrintError();
                 return false;
             }
         }
