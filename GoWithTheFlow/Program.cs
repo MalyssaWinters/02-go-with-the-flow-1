@@ -44,7 +44,10 @@ namespace GoWithTheFlow
         static bool GetYesOrNo()
         {
             string answer = Console.ReadLine();
-            while (answer.ToLower() != "yes" && answer.ToLower() != "no")
+            // answer = "no"
+
+            // while (answer.ToLower() != "yes" && answer.ToLower() != "no")
+            while (!(answer.ToLower() == "yes" || answer.ToLower() == "no"))
             {
                 Console.WriteLine("Please type yes or no");
                 answer = Console.ReadLine();
